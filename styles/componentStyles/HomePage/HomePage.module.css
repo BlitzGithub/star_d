@@ -1,0 +1,74 @@
+.mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid blue;
+  }
+  
+  .mainWrapper > h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    line-height: 8rem;
+    letter-spacing: 0.7rem;
+  }
+  
+  .introWrapper {
+    padding-top: 3%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid red;
+  }
+  
+  .introWrapper > h2 {
+    font-family: "Play", sans-serif;
+    line-height: 3.5rem;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    width: 90%;
+  }
+  
+  .apodWrapper {
+    padding-top: 3%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+  }
+  
+  .apodWrapper > h1 {
+    font-family: "Play", sans-serif;
+    margin-bottom: 1%;
+  }
+  
+  .apodWrapper > h3 {
+    font-family: "Bebas";
+    margin-bottom: 1%;
+  }
+  
+  .apodWrapper > p {
+    padding-left:5%;
+    padding-right:5%;
+    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+  }
+  
+  .apodPic {
+    width: 50%;
+    height: 50%;
+    border: 10px solid black;
+  }
+  
