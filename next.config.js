@@ -6,6 +6,12 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["apod.nasa.gov"]
+    domains: ["apod.nasa.gov"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**"
+      }
+    ]
   }
 };

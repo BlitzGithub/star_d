@@ -4,22 +4,38 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import styles from "../../../styles/componentStyles/HomePage/HomePage.module.css";
 import logo from "../../../styles/assets/website-logo-full.png";
+// import { AiFillCaretRight } from "react-icons/ai";
 import Image from "next/image";
-import Button from "@mui/material/Button";
-import EastIcon from "@mui/icons-material/East";
 import { useState } from "react";
+import "animate.css";
 
 const HomePage = () => {
   const [apod, setApod] = useState([]);
   const url =
     "https://api.nasa.gov/planetary/apod?api_key=vwGYTF3JdClisN4UomGCbeul2ysQB5DpXxtbpiwr";
 
+  let index = [],
+    fIndex;
   useEffect(() => {
     axios.get(url).then((response) => {
       setApod(response.data);
-      console.log(apod.title);
+      fIndex = handleDesc(apod.explanation);
+      console.log(response.data);
     });
+    // .catch((error) => {
+    //   console.log(error);
+    // });
   }, []);
+
+  function handleDesc(desc) {
+    for (let i = desc.length; i >= 0; i--) {
+      if (desc[i] == ".") {
+        index.push(i);
+      }
+      if (index.length == 3) break;
+    }
+    return index.at(3);
+  }
   return (
     <>
       <div className={styles.mainWrapper} id="home">
@@ -44,16 +60,27 @@ const HomePage = () => {
           gained knowledge and connecting with your fellow enthusiasts.
         </h2>
 
-        <Button variant="outlined" endIcon={<EastIcon />} sx={{}}>
-          Start Exploration
-        </Button>
+        <div className={styles.explore}>
+          <button>
+            <i></i>
+            <span>Explore</span>
+          </button>
+        </div>
       </div>
 
       <div className={styles.apodWrapper} id="apod">
         <h1>ASTRONOMICAL PICTURE OF THE DAY</h1>
         <h3>{apod.title}</h3>
-        <img src={apod.url} alt="APOD" className={styles.apodPic} />
-        <p>{apod.explanation}</p>
+        <Image
+          // src={apod.url}
+          src={"https://avatars.dicebear.com/api/male/123.svg"}
+          alt="APOD"
+          className={styles.apodPic}
+          width={50}
+          height={50}
+          priority
+        />
+        <p>{apod.explanation.slice(0, fIndex)}</p>
       </div>
     </>
   );

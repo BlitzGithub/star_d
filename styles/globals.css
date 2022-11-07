@@ -5,13 +5,12 @@
 * {
   margin: 0;
   --black: #071125;
-  --black-light: rgba(7, 17, 37, 0.1);
+  --black-light: rgb(7, 17, 37);
   --navy-blue: #0c2144;
   --dark-blue: #0b1f65;
   --royal-blue: #16488f;
   --white: rgba(255, 255, 255, 0.8);
   --border-dropdown: rgba(255, 255, 255, 0.5);
-  transition: 0.5s;
 }
 
 ::-webkit-scrollbar {

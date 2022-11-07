@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 import styles from "../../../styles/componentStyles/Navbar/Navbar.module.css";
 import logoFull from "../../../styles/assets/website-logo-full.png";
-import PublicIcon from "@mui/icons-material/Public";
-import InfoIcon from "@mui/icons-material/Info";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { IoEarth } from "react-icons/io5";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import { FaNewspaper } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { GiInterstellarPath } from "react-icons/gi";
 import Link from "next/link";
 
@@ -30,33 +30,33 @@ const Navbar = () => {
           />
         </Link>
         <div className={styles.navLinkWrapper}>
-          <div className={styles.navLinks}>
-            <PublicIcon />
-            <a href="#home">
+          <a href="#home">
+            <div className={styles.navLinks}>
+              <IoEarth />
               <p>HOME</p>
-            </a>
-          </div>
+            </div>
+          </a>
 
           <a href="#about">
             <div className={styles.navLinks}>
-              <InfoIcon />
+              <BsFillInfoCircleFill />
               <p>ABOUT</p>
             </div>
           </a>
 
           <div className={styles.navLinks} onClick={handleNewsDrop}>
-            <NewspaperIcon />
+            <FaNewspaper />
             <p>NEWS</p>
             <div className={styles.dropdown}>
               <button>
-                <ArrowDropDownIcon />
+                <IoMdArrowDropdown size={"18px"} />
               </button>
               <div className={styles.dropdownContent} id="newsDrop">
                 <Link href={"/"}>
-                  <a>Space News</a>
+                  <span>Space News</span>
                 </Link>
                 <Link href={"#apod"}>
-                  <a>Astronomy Picture of the Day</a>
+                  <span>Astronomy Picture of the Day</span>
                 </Link>
               </div>
             </div>
@@ -67,20 +67,20 @@ const Navbar = () => {
             <p>INTERSTELLAR</p>
             <div className={styles.dropdown}>
               <button>
-                <ArrowDropDownIcon />
+                <IoMdArrowDropdown size={"18px"} />
               </button>
               <div className={styles.dropdownContent} id="interDrop">
                 <Link href={"/"}>
-                  <a>Planets</a>
+                  <span>Planets</span>
                 </Link>
                 <Link href={"/"}>
-                  <a>Mars Rover Pics</a>
+                  <span>Mars Rover Pics</span>
                 </Link>
                 <Link href={"/"}>
-                  <a>Space Mission Launch Sites and Rockets</a>
+                  <span>Space Mission Launch Sites and Rockets</span>
                 </Link>
                 <Link href={"/"}>
-                  <a>JWST Pictures and Data</a>
+                  <span>JWST Pictures and Data</span>
                 </Link>
               </div>
             </div>
