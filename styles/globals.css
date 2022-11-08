@@ -11,7 +11,8 @@
   --royal-blue: #16488f;
   --white: rgba(255, 255, 255, 0.8);
   --border-dropdown: rgba(255, 255, 255, 0.5);
-  transition: all 0.5s;
+  transition: ease-in 0.5s;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

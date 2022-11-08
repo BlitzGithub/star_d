@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <>
       <div className={styles.navbarWrapper}>
-        <Link href={"#home"}>
+        <Link href={"/"}>
           <Image
             src={logoFull}
             alt="Website Logo"
@@ -30,19 +30,19 @@ const Navbar = () => {
           />
         </Link>
         <div className={styles.navLinkWrapper}>
-          <a href="#home">
+          <Link href="/">
             <div className={styles.navLinks}>
               <IoEarth />
               <p>HOME</p>
             </div>
-          </a>
+          </Link>
 
-          <a href="#about">
+          <Link href="/#about">
             <div className={styles.navLinks}>
               <BsFillInfoCircleFill />
               <p>ABOUT</p>
             </div>
-          </a>
+          </Link>
 
           <div className={styles.navLinks} onClick={handleNewsDrop}>
             <FaNewspaper />
@@ -52,10 +52,10 @@ const Navbar = () => {
                 <IoMdArrowDropdown size={"18px"} />
               </button>
               <div className={styles.dropdownContent} id="newsDrop">
-                <Link href={"/"}>
+                <Link href={"/space-news"}>
                   <span>Space News</span>
                 </Link>
-                <Link href={"#apod"}>
+                <Link href={"/#apod"}>
                   <span>Astronomy Picture of the Day</span>
                 </Link>
               </div>

@@ -12,14 +12,26 @@ const Footer = () => {
         </div>
         <div className={styles.footerRight}>
           <div>
-            <p>Space News</p>
-            <p>Astronomy icture of the Day</p>
+            <a href="#apod">
+              <p>Space News</p>
+            </a>
+            <a href="#apod">
+              <p>Astronomy Picture of the Day</p>
+            </a>
           </div>
           <div>
-            <p>Planets</p>
-            <p>Mars Rover</p>
-            <p>Launc Sites and Rockets</p>
-            <p>James Webb Space Telescope</p>
+            <a href="#apod">
+              <p>Planets</p>
+            </a>
+            <a href="#apod">
+              <p>Mars Rover</p>
+            </a>
+            <a href="#apod">
+              <p>Launch Sites and Rockets</p>
+            </a>
+            <a href="#apod">
+              <p>James Webb Space Telescope</p>
+            </a>
           </div>
         </div>
       </div>

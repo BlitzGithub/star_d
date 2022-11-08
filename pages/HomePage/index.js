@@ -2,8 +2,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import axios from "axios";
-import styles from "../../../styles/componentStyles/HomePage/HomePage.module.css";
-import logo from "../../../styles/assets/website-logo-full.png";
+import styles from "../../styles/componentStyles/HomePage/HomePage.module.css";
+import logo from "../../styles/assets/website-logo-full.png";
 import Image from "next/image";
 import { useState } from "react";
 import "animate.css";
@@ -63,11 +63,10 @@ const HomePage = () => {
         <div className={styles.apodPic}>
           <Image
             src={apod.url}
-            // src={"https://avatars.dicebear.com/api/male/123.svg"}
             alt="APOD"
             width={100}
             height={100}
-            priority
+            priority={true}
             id="apodPic"
           />
         </div>
