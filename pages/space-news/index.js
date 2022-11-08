@@ -2,6 +2,7 @@
 import React, { use, useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../styles/componentStyles/space-news/SpaceNews.module.css";
+import Newsfeed from "../components/Newsfeed/Newsfeed";
 
 const SpaceNews = () => {
   const [articles, setArticles] = useState([]);
@@ -33,7 +34,25 @@ const SpaceNews = () => {
 
   return (
     <>
-      <div className={styles.snewsWrapper}></div>
+      <div className={styles.snewsWrapper}>
+        <p>
+          &quot;Earth is a small town with many neighborhoods in a very big
+          universe.&quot; &ndash; Ron Garan
+        </p>
+        <div className={styles.blogFeed}>
+          {articles.map((element) => {
+            return (
+              <Newsfeed
+                key={element.link}
+                title={element.title}
+                summary={element.summary}
+                media={element.media}
+                link={element.link}
+              />
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 };

@@ -33,20 +33,20 @@ const Navbar = () => {
           <Link href="/">
             <div className={styles.navLinks}>
               <IoEarth />
-              <p>HOME</p>
+              <p data-text="HOME">HOME</p>
             </div>
           </Link>
 
           <Link href="/#about">
             <div className={styles.navLinks}>
               <BsFillInfoCircleFill />
-              <p>ABOUT</p>
+              <p data-text="ABOUT">ABOUT</p>
             </div>
           </Link>
 
           <div className={styles.navLinks} onClick={handleNewsDrop}>
             <FaNewspaper />
-            <p>NEWS</p>
+            <p data-text="NEWS">NEWS</p>
             <div className={styles.dropdown}>
               <button>
                 <IoMdArrowDropdown size={"18px"} />
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           <div className={styles.navLinks} onClick={handleInterDrop}>
             <GiInterstellarPath />
-            <p>INTERSTELLAR</p>
+            <p data-text="INTERSTELLAR">INTERSTELLAR</p>
             <div className={styles.dropdown}>
               <button>
                 <IoMdArrowDropdown size={"18px"} />
