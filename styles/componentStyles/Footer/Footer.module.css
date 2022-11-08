@@ -1,0 +1,28 @@
+.footerWrapper {
+  width: 100vw;
+  height: 100vh;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerLeft {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerRight {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerRight > div {
+  padding: 1%;
+  text-align: justify;
+}

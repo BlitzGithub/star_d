@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import styles from "../../../styles/componentStyles/HomePage/HomePage.module.css";
 import logo from "../../../styles/assets/website-logo-full.png";
-// import { AiFillCaretRight } from "react-icons/ai";
 import Image from "next/image";
 import { useState } from "react";
 import "animate.css";
@@ -14,28 +13,18 @@ const HomePage = () => {
   const url =
     "https://api.nasa.gov/planetary/apod?api_key=vwGYTF3JdClisN4UomGCbeul2ysQB5DpXxtbpiwr";
 
-  let index = [],
-    fIndex;
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setApod(response.data);
-      fIndex = handleDesc(apod.explanation);
-      console.log(response.data);
-    });
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+    axios
+      .get(url)
+      .then((response) => {
+        setApod(response.data);
+        console.log(apod);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-  function handleDesc(desc) {
-    for (let i = desc.length; i >= 0; i--) {
-      if (desc[i] == ".") {
-        index.push(i);
-      }
-      if (index.length == 3) break;
-    }
-    return index.at(3);
-  }
   return (
     <>
       <div className={styles.mainWrapper} id="home">
@@ -71,16 +60,18 @@ const HomePage = () => {
       <div className={styles.apodWrapper} id="apod">
         <h1>ASTRONOMICAL PICTURE OF THE DAY</h1>
         <h3>{apod.title}</h3>
-        <Image
-          // src={apod.url}
-          src={"https://avatars.dicebear.com/api/male/123.svg"}
-          alt="APOD"
-          className={styles.apodPic}
-          width={50}
-          height={50}
-          priority
-        />
-        <p>{apod.explanation.slice(0, fIndex)}</p>
+        <div className={styles.apodPic}>
+          <Image
+            src={apod.url}
+            // src={"https://avatars.dicebear.com/api/male/123.svg"}
+            alt="APOD"
+            width={100}
+            height={100}
+            priority
+            id="apodPic"
+          />
+        </div>
+        <p>{apod.explanation}</p>
       </div>
     </>
   );
