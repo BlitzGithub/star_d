@@ -76,6 +76,12 @@
   z-index: 1;
   overflow: auto;
   min-width: 160px;
+  margin-top: 15px;
+}
+
+.nlWrapper:hover > .navLinks > .dropdown > .dropdownContent {
+  display: block;
+  transform: translate(-5vw, 2vh);
 }
 
 .dropdownContent a {

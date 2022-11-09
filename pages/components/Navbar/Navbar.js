@@ -10,13 +10,6 @@ import { GiInterstellarPath } from "react-icons/gi";
 import Link from "next/link";
 
 const Navbar = () => {
-  const handleNewsDrop = () => {
-    document.getElementById("newsDrop").classList.toggle(styles.show);
-  };
-  const handleInterDrop = () => {
-    document.getElementById("interDrop").classList.toggle(styles.show);
-  };
-
   return (
     <>
       <div className={styles.navbarWrapper}>
@@ -32,26 +25,27 @@ const Navbar = () => {
         <div className={styles.navLinkWrapper}>
           <Link href="/">
             <div className={styles.nlWrapper}>
+              <div className={styles.dash}></div>
               <div className={styles.navLinks}>
                 <IoEarth />
                 <p data-text="HOME">HOME</p>
               </div>
-              <div className={styles.dash}></div>
             </div>
           </Link>
 
           <Link href="/#about">
             <div className={styles.nlWrapper}>
+              <div className={styles.dash}></div>
               <div className={styles.navLinks}>
                 <BsFillInfoCircleFill />
                 <p data-text="ABOUT">ABOUT</p>
               </div>
-              <div className={styles.dash}></div>
             </div>
           </Link>
 
           <div className={styles.nlWrapper}>
-            <div className={styles.navLinks} onClick={handleNewsDrop}>
+            <div className={styles.dash}></div>
+            <div className={styles.navLinks}>
               <FaNewspaper />
               <p data-text="NEWS">NEWS</p>
               <div className={styles.dropdown}>
@@ -68,11 +62,11 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.dash}></div>
           </div>
 
           <div className={styles.nlWrapper}>
-            <div className={styles.navLinks} onClick={handleInterDrop}>
+            <div className={styles.dash}></div>
+            <div className={styles.navLinks}>
               <GiInterstellarPath />
               <p data-text="INTERSTELLAR">INTERSTELLAR</p>
               <div className={styles.dropdown}>
@@ -95,7 +89,6 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.dash}></div>
           </div>
         </div>
       </div>
