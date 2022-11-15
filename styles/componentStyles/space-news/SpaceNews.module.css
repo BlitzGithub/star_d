@@ -24,7 +24,6 @@
 .blogFeed {
   display: flex;
   flex-direction: column;
-  background-color: var(--);
   border-radius: 20px;
   height: 100%;
   width: 100%;
@@ -75,6 +74,7 @@
   padding-right: 1%;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
+  border: 3px solid whitesmoke;
   border-bottom-right-radius: 13px;
   color: var(--white);
   transform: translate(76.7vw, -8.8vh);

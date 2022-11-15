@@ -64,8 +64,8 @@ const HomePage = () => {
           <Image
             src={apod.url}
             alt="APOD"
-            width={100}
-            height={100}
+            width={310}
+            height={310}
             priority={true}
             id="apodPic"
           />

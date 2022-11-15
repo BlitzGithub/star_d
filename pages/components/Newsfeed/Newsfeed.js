@@ -23,7 +23,7 @@ const Newsfeed = ({ title, summary, media, link }) => {
         }}
         className={styles.newsFeedBtn}
       >
-        Read More
+        READ MORE
       </button>
     </>
   );

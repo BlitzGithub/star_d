@@ -74,7 +74,7 @@ const Navbar = () => {
                   <IoMdArrowDropdown size={"18px"} />
                 </button>
                 <div className={styles.dropdownContent} id="interDrop">
-                  <Link href={"/"}>
+                  <Link href={"/planets"}>
                     <span>Planets</span>
                   </Link>
                   <Link href={"/"}>

@@ -183,10 +183,3 @@
   justify-content: center;
   border: 10px solid black;
 }
-
-.apodPic > #apodPic {
-  width: auto !important;
-  max-width: inherit;
-  max-height: inherit;
-  height: auto !important;
-}
