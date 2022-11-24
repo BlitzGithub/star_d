@@ -74,11 +74,8 @@ const Navbar = () => {
                   <IoMdArrowDropdown size={"18px"} />
                 </button>
                 <div className={styles.dropdownContent} id="interDrop">
-                  <Link href={"/planets"}>
-                    <span>Planets</span>
-                  </Link>
-                  <Link href={"/"}>
-                    <span>Mars Rover Pics</span>
+                  <Link href={"/mars-rover"}>
+                    <span>Mars Rover</span>
                   </Link>
                   <Link href={"/"}>
                     <span>Space Mission Launch Sites and Rockets</span>
