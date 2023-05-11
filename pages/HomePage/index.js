@@ -1,15 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../styles/componentStyles/HomePage/HomePage.module.css";
 import logo from "../../styles/assets/website-logo-full.png";
 import Image from "next/image";
-import { useState } from "react";
 import "animate.css";
+import Modal from "@mui/material/Modal";
 
 const HomePage = () => {
   const [apod, setApod] = useState([]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+    console.log(open);
+  };
+  const handleClose = () => {
+    setOpen(false);
+    console.log(open);
+  };
   const url =
     "https://api.nasa.gov/planetary/apod?api_key=vwGYTF3JdClisN4UomGCbeul2ysQB5DpXxtbpiwr";
 
@@ -18,6 +27,7 @@ const HomePage = () => {
       .get(url)
       .then((response) => {
         setApod(response.data);
+        console.log("apod data:");
         console.log(apod);
       })
       .catch((error) => {
@@ -62,15 +72,29 @@ const HomePage = () => {
         <h3>{apod.title}</h3>
         <div className={styles.apodPic}>
           <Image
-            src={apod.url}
+            src={apod.hdurl}
             alt="APOD"
             width={310}
             height={310}
             priority={true}
             id="apodPic"
+            style={{ cursor: "pointer" }}
+            onClick={handleOpen}
           />
         </div>
         <p>{apod.explanation}</p>
+        <div>
+          <Image
+            src={apod.hdurl}
+            alt="APOD"
+            width={1000}
+            height={510}
+            priority={true}
+            id="apodPic"
+            style={{ cursor: "pointer" }}
+            onClick={handleOpen}
+          />
+        </div>
       </div>
     </>
   );

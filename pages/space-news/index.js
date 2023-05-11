@@ -3,16 +3,17 @@ import React, { use, useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../styles/componentStyles/space-news/SpaceNews.module.css";
 import Newsfeed from "../components/Newsfeed/Newsfeed";
+import { SPACE_NEWS_API_URL, SPACE_NEWS_API_KEY } from "../../config";
 
 const SpaceNews = () => {
   const [articles, setArticles] = useState([]);
   const getData = () => {
     const options = {
       method: "GET",
-      url: "https://free-news.p.rapidapi.com/v1/search",
+      url: { SPACE_NEWS_API_URL },
       params: { q: "space", lang: "en", page: "2", page_size: "25" },
       headers: {
-        "X-RapidAPI-Key": "1a29bb8f5bmsh58da167d06514b2p18f8b3jsn5c52866062cf",
+        "X-RapidAPI-Key": { SPACE_NEWS_API_KEY },
         "X-RapidAPI-Host": "free-news.p.rapidapi.com"
       }
     };
