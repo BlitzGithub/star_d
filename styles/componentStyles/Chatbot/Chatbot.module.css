@@ -1,15 +1,15 @@
 .mainWrapper {
-  height: 80vh;
-  width: 20vw;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-top: 10vh;
+  height: 72vh;
+  width: 19vw;
+  /* margin-top: 1vh; */
   display: flex;
   justify-content: center;
+  background-color: var(--white);
   border-radius: 30px;
 }
 .chatContainer {
-  padding: 0.5em;
+  background: var(--white);
+  padding-top: 0.5em;
   border-radius: 30px;
   width: 100%;
   border: none;

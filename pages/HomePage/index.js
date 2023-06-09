@@ -8,10 +8,16 @@ import Image from "next/image";
 import "animate.css";
 import Chatbot from "../components/Chatbot";
 import Modal from "@mui/material/Modal";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const HomePage = () => {
   const [apod, setApod] = useState([]);
   const [open, setOpen] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(false);
   const handleOpen = () => {
     setOpen(true);
     console.log(open);
@@ -19,6 +25,11 @@ const HomePage = () => {
   const handleClose = () => {
     setOpen(false);
     console.log(open);
+  };
+  const handleShowChatbot = () => {
+    console.log(showChatbot);
+    setShowChatbot(!showChatbot);
+    console.log(showChatbot);
   };
   const url =
     "https://api.nasa.gov/planetary/apod?api_key=aH9UQKu6dcdoZWbM9LdfGnj4oGBhcWBUAQraxL5v";
@@ -39,11 +50,28 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.mainWrapper} id="home">
-        <div className={styles.chatbotWrapper}>
-          <div className={styles.chatAccordion}>
+        {showChatbot ? (
+          <div className={styles.chatbotWrapper}>
+            <button
+              onClick={() => {
+                handleShowChatbot();
+              }}
+              className={styles.chatbotclose}
+            >
+              Close
+            </button>
             <Chatbot />
           </div>
-        </div>
+        ) : (
+          <button
+            className={styles.chatbotOpen}
+            onClick={() => {
+              handleShowChatbot();
+            }}
+          >
+            SD-47
+          </button>
+        )}
         <h1>
           WELCOME TO <br />
         </h1>

@@ -6,13 +6,44 @@
   align-items: center;
   justify-content: center;
 }
+
 .chatbotWrapper {
+  display: flex;
+  flex-direction: column;
   width: fit-content;
   height: fit-content;
   position: fixed;
-  transform: translate(39vw, 3vh);
-  z-index: 10;
+  transform: translate(38vw, 7vh);
+  border-radius: 30px;
+  background-color: var(--white);
+  padding-top: 0.6em;
 }
+
+.chatbotclose {
+  border: none;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5em;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.chatbotOpen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5vw;
+  height: 5vw;
+  background-color: #0c2190;
+  border-radius: 50%;
+  transform: translate(44vw, 63vh);
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5em;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  position: sticky;
+}
+
 .mainWrapper > h1 {
   font-family: "Bebas Neue", cursive;
   font-size: 5rem;
