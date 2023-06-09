@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
@@ -13,9 +13,18 @@ import styles from "../../../styles/componentStyles/Chatbot/Chatbot.module.css";
 // import axios from "axios";
 
 const Chatbot = () => {
+  const currHour = new Date().getHours();
   const [messages, setMessages] = useState([
     {
-      message: "Hello, Welcome to Stardust",
+      message: `${
+        currHour >= 5
+          ? currHour < 12
+            ? "Good Morning!"
+            : currHour < 16
+            ? "Good Afternoon!"
+            : "Good Evening!"
+          : "Good Evening!"
+      }\nWelcome to Stardust. \nI am <b>SD-47</b> and I am here to help you find answers about any queries you may have about the universe.\nBe it about stars, black holes, quasars or anything related to the cosmos.`,
       sender: "chatbot"
     }
   ]);
@@ -55,7 +64,8 @@ const Chatbot = () => {
 
     const systemMessage = {
       role: "system",
-      content: "Answer the questions like an expert using exmaples"
+      content:
+        "Answer the questions like an expert explaining to a child using examples. Only answer questions related to the following topics - astronomy, cosmology, quantum physics, universe, outer space, physics."
     };
 
     const apiRequest = {

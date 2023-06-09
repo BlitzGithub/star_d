@@ -21,7 +21,7 @@ const HomePage = () => {
     console.log(open);
   };
   const url =
-    "https://api.nasa.gov/planetary/apod?api_key=vwGYTF3JdClisN4UomGCbeul2ysQB5DpXxtbpiwr";
+    "https://api.nasa.gov/planetary/apod?api_key=aH9UQKu6dcdoZWbM9LdfGnj4oGBhcWBUAQraxL5v";
 
   useEffect(() => {
     axios
@@ -39,6 +39,11 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.mainWrapper} id="home">
+        <div className={styles.chatbotWrapper}>
+          <div className={styles.chatAccordion}>
+            <Chatbot />
+          </div>
+        </div>
         <h1>
           WELCOME TO <br />
         </h1>
@@ -97,7 +102,6 @@ const HomePage = () => {
           />
         </div>
       </div>
-      {/* <Chatbot /> */}
     </>
   );
 };
