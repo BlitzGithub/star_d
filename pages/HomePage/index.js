@@ -6,6 +6,7 @@ import styles from "../../styles/componentStyles/HomePage/HomePage.module.css";
 import logo from "../../styles/assets/website-logo-full.png";
 import Image from "next/image";
 import "animate.css";
+import Chatbot from "../components/Chatbot";
 import Modal from "@mui/material/Modal";
 
 const HomePage = () => {
@@ -96,6 +97,7 @@ const HomePage = () => {
           />
         </div>
       </div>
+      {/* <Chatbot /> */}
     </>
   );
 };
