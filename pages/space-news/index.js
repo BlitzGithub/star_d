@@ -7,26 +7,32 @@ import { SPACE_NEWS_API_URL, SPACE_NEWS_API_KEY } from "../../config";
 
 const SpaceNews = () => {
   const [articles, setArticles] = useState([]);
-  const getData = () => {
+  const getData = async () => {
     const options = {
       method: "GET",
-      url: { SPACE_NEWS_API_URL },
-      params: { q: "space", lang: "en", page: "2", page_size: "25" },
+      url: "https://newscatcher.p.rapidapi.com/v1/search_free",
+      params: {
+        q: "space",
+        lang: "en",
+        page: "1",
+        page_size: "30",
+        media: "True"
+      },
       headers: {
-        "X-RapidAPI-Key": { SPACE_NEWS_API_KEY },
-        "X-RapidAPI-Host": "free-news.p.rapidapi.com"
+        "X-RapidAPI-Key": "1a29bb8f5bmsh58da167d06514b2p18f8b3jsn5c52866062cf",
+        "X-RapidAPI-Host": "newscatcher.p.rapidapi.com"
       }
     };
 
-    axios
-      .request(options)
-      .then(function (response) {
-        setArticles(response.data.articles);
-        console.log(articles);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    try {
+      const response = await axios.request(options);
+      setArticles(response.data.articles);
+      for (let i = 0; i < articles.length; i++) {
+        console.log(articles[i].author);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
