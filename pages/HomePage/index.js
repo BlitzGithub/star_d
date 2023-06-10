@@ -6,13 +6,8 @@ import styles from "../../styles/componentStyles/HomePage/HomePage.module.css";
 import logo from "../../styles/assets/website-logo-full.png";
 import Image from "next/image";
 import "animate.css";
-import Chatbot from "../components/Chatbot";
-import Modal from "@mui/material/Modal";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Chatbot from "../components/Chatbot/Chatbot";
+// import Modal from "@mui/material/Modal";
 
 const HomePage = () => {
   const [apod, setApod] = useState([]);
@@ -32,7 +27,7 @@ const HomePage = () => {
     console.log(showChatbot);
   };
   const url =
-    "https://api.nasa.gov/planetary/apod?api_key=aH9UQKu6dcdoZWbM9LdfGnj4oGBhcWBUAQraxL5v";
+    "https://api.nasa.gov/planetary/apod?api_key=aH9UQKu6dcdoZWbM9LdfGnj4oGBhcWBUAQraxL5v&count=1";
 
   useEffect(() => {
     axios

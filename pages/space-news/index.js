@@ -36,6 +36,7 @@ const SpaceNews = () => {
   };
 
   useEffect(() => {
+    document.title = "Stardust - Space News";
     getData();
   }, []);
 
