@@ -10,7 +10,6 @@ import {
   TypingIndicator
 } from "@chatscope/chat-ui-kit-react";
 import styles from "../../../styles/componentStyles/Chatbot/Chatbot.module.css";
-// import axios from "axios";
 
 const Chatbot = () => {
   const currHour = new Date().getHours();
